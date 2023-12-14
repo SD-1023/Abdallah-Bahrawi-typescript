@@ -1,0 +1,55 @@
+html
+  head
+    title Book List
+  body
+    h1 Book List
+    ul(id='bookList')
+      each book in books
+        li
+          a(href='#', data-id=book.id)= 'Book ID: ' + book.id + ' Book Name: ' + book.name
+
+    h1 Add New Book
+    form(id='addBookForm')
+      label(for='id') ID:
+      input(type='text', id='id', name='id', required)
+      br
+
+      label(for='name') name:
+      input(type='name', id='name', name='name', required)
+      br
+
+      button(type='submit') Add Book
+
+    script.
+      document.getElementById('addBookForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = {
+          id: document.getElementById('id').value,
+          name: document.getElementById('name').value,
+        };
+
+        fetch('/books', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.text())
+        .then(message => {
+          alert(message); 
+          window.location.href = 'http://localhost:3000/books';
+        })
+        .catch(error => console.error('Error:', error));
+      });
+
+      const bookList = document.getElementById('bookList');
+      bookList.addEventListener('click', function (event) {
+        const target = event.target;
+        if (target.tagName === 'A') {
+          event.preventDefault();
+          const bookId = target.getAttribute('data-id');
+          window.location.href = 'http://localhost:3000/books/' + bookId;
+        }
+      });
