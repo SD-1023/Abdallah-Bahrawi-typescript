@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "isbn": "978-0-316-76948-0"
+  },
+  {
+    "id": 2,
+    "name": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "isbn": "978-0-06-112008-4"
+  },
+  {
+    "id": 3,
+    "name": "1984",
+    "author": "George Orwell",
+    "isbn": "978-0-452-28423-4"
+  },
+  {
+    "id": 4,
+    "name": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "isbn": "978-0-7432-7356-5"
+  },
+  {
+    "id": 5,
+    "name": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "isbn": "978-0-261-10325-5"
+  }
+]
