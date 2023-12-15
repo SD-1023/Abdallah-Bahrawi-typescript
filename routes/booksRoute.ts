@@ -1,5 +1,3 @@
-// routes.ts
-
 import express, { Router, Request, Response } from 'express';
 import { Book, readBooksFromFile, writeBooksToFile, search } from '../services/books';
 
@@ -71,16 +69,5 @@ router.post('/', async (req: { body: any }, res: Response) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
-// router.get('/search', async (req, res) => {
-//     const query = req.query.q;
-//     if (!query) {
-//       return res.status(400).send('Missing query parameter');
-//     }  
-//     const songs = await songsService.search(query as string);
-//     return res.json(songs)
-// })
-
-
 
 export default router;
