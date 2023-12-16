@@ -9,9 +9,8 @@ export interface Book {
   isbn: string;
 }
 
-
-export const readBooksFromFile = (filePath: string): Promise<Book[]> => {
-  const songs = getBooksRepo().readBooks(filePath);
+export const  readBooksFromFile = async (filePath: string): Promise<Book[]> => {
+  const songs = await getBooksRepo().readBooks(filePath);
   return songs;
 };
 

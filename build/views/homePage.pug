@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1= message
+    button(type='button', onclick='goToBooks()') Go to The Books Page
+
+    script.
+      function goToBooks(){
+        window.location.href = 'http://localhost:3000/books';
+      }
+

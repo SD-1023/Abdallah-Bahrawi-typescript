@@ -35,10 +35,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.search = exports.writeBooksToFile = exports.readBooksFromFile = void 0;
 const fs = __importStar(require("fs"));
 const booksRepo_1 = require("../../repo/booksRepo");
-const readBooksFromFile = (filePath) => {
-    const songs = (0, booksRepo_1.getBooksRepo)().readBooks(filePath);
+const readBooksFromFile = (filePath) => __awaiter(void 0, void 0, void 0, function* () {
+    const songs = yield (0, booksRepo_1.getBooksRepo)().readBooks(filePath);
     return songs;
-};
+});
 exports.readBooksFromFile = readBooksFromFile;
 const writeBooksToFile = (filePath, books) => {
     return new Promise((resolve, reject) => {

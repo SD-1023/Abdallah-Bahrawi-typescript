@@ -55,8 +55,9 @@ router.get('/:id', async (req: { params: { id: number } }, res: Response) => {
   }
 });
 
-router.post('/', async (req: { body: any }, res: Response) => {
+router.post('/', async (req: { body: Book }, res: Response) => {
   const newBook: Book = req.body;
+  newBook.id = +newBook.id
 
   try {
     let books = await readBooksFromFile(booksFilePath);

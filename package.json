@@ -4,8 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "nodemon app",
-    "build": "tsc",
+    "start": "nodemon ./build/app.js",
+    "build": "tsc && xcopy views build\\views\\",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
